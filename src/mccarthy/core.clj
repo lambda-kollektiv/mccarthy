@@ -1,6 +1,7 @@
-(ns mccarthy.core)
+(ns mccarthy.core
+  (:require [instaparse.core :refer [parser]]))
 
-(defn foo
-  "I don't do a whole lot."
-  [x]
-  (println x "Hello, World!"))
+(def scheme-parser
+  (parser (slurp "resources/scheme-grammar.bnf")))
+
+(scheme-parser "(+ (+ 1 2) 1123 2123)")
