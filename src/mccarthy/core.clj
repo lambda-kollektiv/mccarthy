@@ -4,4 +4,6 @@
 (def scheme-parser
   (parser (slurp "resources/scheme-grammar.bnf")))
 
-(scheme-parser "(+ (+ 1 2) 1123 2123)")
+(scheme-parser "(define (radius 2) 10)")
+(scheme-parser "()")
+(scheme-parser "radius")
