@@ -1,23 +1,11 @@
-<<<<<<< HEAD
-EXPRESSION = ATOM | LIST
-LIST = <LEFTDELIMITER> <SPC*> OPERATOR OPERANDS <SPC*> <RIGHTDELIMITER>
-OPERATOR = IDENTIFIER | LIST
-OPERANDS = (<SPC+> (ATOM | LIST))*
-ATOM = NUMBER | IDENTIFIER
-NUMBER = #"[0-9]+"
-IDENTIFIER = KEYWORD | #"[a-zA-z\-\+][a-zA-Z\-\+\*\/0-9]*"
-LEFTDELIMITER = "("
-RIGHTDELIMITER = ")"
-SPC = #"\s"
-KEYWORD = "fn" | "def"
-=======
-expression =  <leftdelimiter> <whitespace*> operator operands <whitespace*> <rightdelimiter>
-operator = expression | keyword | !keyword identifier
-operands = (<whitespace+> (expression | identifier | number))+
-identifier = #"[a-z][a-z]*[0-9]*"
-keyword = "define"
+expression = atom | list
+list = <leftdelimiter> <spc*> operator operands <spc*> <rightdelimiter>
+operator = identifier | list
+operands = (<spc+> (atom | list))*
+atom = number | identifier
 number = #"[0-9]+"
-whitespace = #"\s"
+identifier = keyword | #"[a-za-z\-\+][a-za-z\-\+\*\/0-9]*"
 leftdelimiter = "("
 rightdelimiter = ")"
->>>>>>> f5f8aeacadc45d0a9302738592229086602a35a3
+spc = #"\s"
+keyword = "fn" | "def"
