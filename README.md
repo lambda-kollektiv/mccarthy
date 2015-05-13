@@ -11,6 +11,7 @@ FIXME
 - [ ] define grammar for scheme
 - [ ] build parser
 - [ ] create code test set
+- [ ] design and implement sematics
  
 ## License
 
