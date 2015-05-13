@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 EXPRESSION = ATOM | LIST
 LIST = <LEFTDELIMITER> <SPC*> OPERATOR OPERANDS <SPC*> <RIGHTDELIMITER>
 OPERATOR = IDENTIFIER | LIST
@@ -9,3 +10,14 @@ LEFTDELIMITER = "("
 RIGHTDELIMITER = ")"
 SPC = #"\s"
 KEYWORD = "fn" | "def"
+=======
+expression =  <leftdelimiter> <whitespace*> operator operands <whitespace*> <rightdelimiter>
+operator = expression | keyword | !keyword identifier
+operands = (<whitespace+> (expression | identifier | number))+
+identifier = #"[a-z][a-z]*[0-9]*"
+keyword = "define"
+number = #"[0-9]+"
+whitespace = #"\s"
+leftdelimiter = "("
+rightdelimiter = ")"
+>>>>>>> f5f8aeacadc45d0a9302738592229086602a35a3
