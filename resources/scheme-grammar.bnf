@@ -1,11 +1,12 @@
 expression = atom | list
 list = <leftdelimiter> <spc*> operator operands <spc*> <rightdelimiter>
 operator = identifier | list
-operands = (<spc+> (atom | list))*
-atom = number | identifier
+operands = ((<spc+> atom)* | (<spc*> list)*)*
+atom = (identifier | number | string)
+identifier = keyword / #"[a-zA-Z\-\+\/*\//][a-za-z\-\+\*\/0-9]*"
 number = #"[0-9]+"
-identifier = keyword | #"[a-za-z\-\+][a-za-z\-\+\*\/0-9]*"
-leftdelimiter = "("
+string = (#"\"[a-zA-Z\s]*\"")+
+keyword = "fun" | "define" | "list"
 rightdelimiter = ")"
+leftdelimiter = "("
 spc = #"\s"
-keyword = "fn" | "def"
