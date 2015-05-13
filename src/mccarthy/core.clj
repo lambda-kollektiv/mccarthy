@@ -15,5 +15,3 @@
 (parse "(def sum (fn (x y) (+ x y)))")
 
 (parse "(list 12 23 123 )")
-
-(parse "")
